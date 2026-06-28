@@ -4,110 +4,348 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perú — Grupo A | Mundial 2026</title>
+
+    <!-- Bootstrap: librería de estilos y componentes listos para usar -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons: iconos de Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Nuestros estilos compartidos entre todos los equipos -->
     <link href="equipos.css" rel="stylesheet">
+
+    <!-- Colores específicos de Perú (rojo y blanco) -->
     <style>
-        .equipo-hero { background: linear-gradient(135deg, #D91023 0%, #ffffff 50%, #D91023 100%); }
-        .conf-badge  { background: rgba(217,16,35,.15); border: 1px solid rgba(217,16,35,.5); color: #D91023; }
-        .equipo-hero h1 { color: #D91023; }
-        .equipo-hero .hero-stats .val { color: #D91023; }
-        .equipo-hero .hero-stat .lbl { color: #D91023cc; }
-        .overlay { background: rgba(255,255,255,.08) !important; }
+        .hero-equipo { background: linear-gradient(135deg, #D91023, #ffffff, #D91023); }
+        .hero-equipo h1             { color: #D91023; }
+        .hero-equipo .subtitulo     { color: #D91023; opacity: 0.85; }
+        .hero-equipo .estadisticas .numero  { color: #D91023; }
+        .hero-equipo .estadisticas .etiqueta { color: #D9102399; }
     </style>
 </head>
 <body>
 
-    <!-- NAVEGACIÓN ENTRE EQUIPOS -->
-    <nav class="team-nav">
-        <div class="team-nav-inner">
-            <a href="grupoA.html" class="team-nav-brand">⚽ Grupo A</a>
-            <div class="team-nav-links">
-                <a href="Argentina.html" class="team-btn">🇦🇷 Argentina</a>
-                <a href="Ecuador.html"   class="team-btn">🇪🇨 Ecuador</a>
-                <a href="Peru.html"      class="team-btn current">🇵🇪 Perú</a>
-                <a href="Kenia.html"     class="team-btn">🇰🇪 Kenia</a>
-            </div>
-        </div>
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN ENTRE EQUIPOS
+         ========================================== -->
+    <nav class="barra-nav">
+        <a href="grupoA.html" class="marca">⚽ Grupo A</a>
+        <a href="Argentina.html" class="btn-equipo">🇦🇷 Argentina</a>
+        <a href="Ecuador.html"   class="btn-equipo">🇪🇨 Ecuador</a>
+        <a href="Peru.html"      class="btn-equipo activo">🇵🇪 Perú</a>
+        <a href="Kenia.html"     class="btn-equipo">🇰🇪 Kenia</a>
     </nav>
 
-    <!-- HERO -->
-    <section class="equipo-hero">
-        <div class="overlay"></div>
-        <div class="hero-inner">
-            <div class="flag-big">🇵🇪</div>
+    <!-- ==========================================
+         HERO — Encabezado con bandera y estadísticas
+         ========================================== -->
+    <section class="hero-equipo">
+        <div class="contenido">
+
+            <div class="bandera">
+                <img src="../img/peru.jpg" alt="Bandera de Perú">
+            </div>
+
             <div>
-                <div class="conf-badge">CONMEBOL · FIFA #24</div>
+                <p class="subtitulo">CONMEBOL · FIFA #24</p>
                 <h1>Perú</h1>
-                <p style="color:#D91023;font-weight:600;margin-bottom:.8rem">La Blanquirroja — Pasión Andina</p>
-                <div class="hero-stats">
-                    <div class="hero-stat"><span class="val" style="color:#D91023">9</span><span class="lbl" style="color:#D9102399">Mundiales</span></div>
-                    <div class="hero-stat"><span class="val" style="color:#D91023">#24</span><span class="lbl" style="color:#D9102399">Ranking FIFA</span></div>
-                    <div class="hero-stat"><span class="val" style="color:#D91023">1930</span><span class="lbl" style="color:#D9102399">Debut mundial</span></div>
-                    <div class="hero-stat"><span class="val" style="color:#D91023">3°</span><span class="lbl" style="color:#D9102399">Copa América '75</span></div>
+                <p class="subtitulo">La Blanquirroja — Pasión Andina</p>
+
+                <div class="estadisticas">
+                    <div>
+                        <span class="numero">9</span>
+                        <span class="etiqueta">Mundiales</span>
+                    </div>
+                    <div>
+                        <span class="numero">#24</span>
+                        <span class="etiqueta">Ranking FIFA</span>
+                    </div>
+                    <div>
+                        <span class="numero">1930</span>
+                        <span class="etiqueta">Debut mundial</span>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- CONTENIDO -->
-    <main class="container">
 
-        <!-- PLANTEL -->
-        <section class="section">
-            <div class="sec-tag">Plantel</div>
-            <h2 class="sec-title">Jugadores Destacados</h2>
-            <div class="players-grid">
-                <div class="player-card" data-player="Christian Cueva"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Christian Cueva"><span class="player-num-badge">10</span></div><div class="player-name">Christian Cueva</div><div class="player-pos">Mediocampista</div></div>
-                <div class="player-card" data-player="Gianluca Lapadula"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Gianluca Lapadula"><span class="player-num-badge">9</span></div><div class="player-name">Gianluca Lapadula</div><div class="player-pos">Delantero</div></div>
-                <div class="player-card" data-player="Renato Tapia"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Renato Tapia"><span class="player-num-badge">8</span></div><div class="player-name">Renato Tapia</div><div class="player-pos">Mediocampista</div></div>
-                <div class="player-card" data-player="Edison Flores"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Edison Flores"><span class="player-num-badge">11</span></div><div class="player-name">Edison Flores</div><div class="player-pos">Extremo</div></div>
-                <div class="player-card" data-player="Pedro Gallese"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Pedro Gallese"><span class="player-num-badge">1</span></div><div class="player-name">Pedro Gallese</div><div class="player-pos">Portero</div></div>
-                <div class="player-card" data-player="Miguel Trauco"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Miguel Trauco"><span class="player-num-badge">3</span></div><div class="player-name">Miguel Trauco</div><div class="player-pos">Lateral Izq.</div></div>
-                <div class="player-card" data-player="Andre Carrillo"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Andre Carrillo"><span class="player-num-badge">7</span></div><div class="player-name">André Carrillo</div><div class="player-pos">Extremo</div></div>
-                <div class="player-card" data-player="Carlos Zambrano"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Carlos Zambrano"><span class="player-num-badge">4</span></div><div class="player-name">Carlos Zambrano</div><div class="player-pos">Defensa</div></div>
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+         ========================================== -->
+    <main class="contenedor">
+
+        <!-- --- SECCIÓN: JUGADORES --- -->
+        <section class="seccion">
+            <span class="etiqueta-seccion">Plantel</span>
+            <h2 class="titulo-seccion">Jugadores Destacados</h2>
+            <p class="text-secondary mb-4" style="font-size: .85rem;">
+                <i class="bi bi-info-circle me-1"></i>
+                Haz clic en "Ver bio" para leer la biografía de cada jugador.
+            </p>
+
+            <div class="row g-3">
+
+                <!-- Christian Cueva -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">10</div>
+                            <div class="nombre">Christian Cueva</div>
+                            <div class="posicion">Mediocampista</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-cueva">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-cueva">
+                            <p class="texto-bio">
+                                Nacido el 23 de noviembre de 1991 en Chiclayo. Considerado el jugador
+                                más habilidoso de su generación en Perú. Su zurda mágica y visión de
+                                juego lo hacen especial. Ha jugado en Brasil, Rusia y Turquía.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gianluca Lapadula -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">9</div>
+                            <div class="nombre">G. Lapadula</div>
+                            <div class="posicion">Delantero</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-lapadula">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-lapadula">
+                            <p class="texto-bio">
+                                Nacido el 7 de febrero de 1990 en Turín, Italia. Eligió representar a
+                                Perú gracias a sus raíces maternas peruanas. Delantero potente y goleador.
+                                Su identificación con la camiseta blanquirroja es total e incondicional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Renato Tapia -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">8</div>
+                            <div class="nombre">Renato Tapia</div>
+                            <div class="posicion">Mediocampista</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-tapia">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-tapia">
+                            <p class="texto-bio">
+                                Nacido el 28 de julio de 1995 en Lima. Capitán y cerebro defensivo de
+                                La Blanquirroja. Ha jugado en el Feyenoord de Rotterdam y en el Celta
+                                de Vigo de España, demostrando calidad a nivel europeo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Edison Flores -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">11</div>
+                            <div class="nombre">Edison Flores</div>
+                            <div class="posicion">Extremo</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-flores">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-flores">
+                            <p class="texto-bio">
+                                Nacido el 14 de mayo de 1994 en Lima. Apodado "Orejas" por sus goles
+                                de larga distancia. Marcó goles cruciales en la histórica clasificación
+                                de Perú al Mundial de Rusia 2018 tras 36 años de ausencia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pedro Gallese -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">1</div>
+                            <div class="nombre">Pedro Gallese</div>
+                            <div class="posicion">Portero</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-gallese">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-gallese">
+                            <p class="texto-bio">
+                                Nacido el 23 de febrero de 1990 en Sullana. Uno de los porteros más
+                                queridos por la hinchada peruana. Juega en el Orlando City de la MLS.
+                                Destaca por sus reflejos y personalidad en momentos de presión.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Miguel Trauco -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">3</div>
+                            <div class="nombre">Miguel Trauco</div>
+                            <div class="posicion">Lateral Izq.</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-trauco">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-trauco">
+                            <p class="texto-bio">
+                                Nacido el 25 de noviembre de 1992 en Yurimaguas. Lateral con gran
+                                proyección ofensiva. Ganó la Copa Libertadores con el Flamengo en 2019
+                                y luego jugó en el Saint-Étienne de Francia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- André Carrillo -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">7</div>
+                            <div class="nombre">André Carrillo</div>
+                            <div class="posicion">Extremo</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-carrillo">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-carrillo">
+                            <p class="texto-bio">
+                                Nacido el 14 de junio de 1991 en Lima. Apodado "La Culebra" por su
+                                forma sinuosa de driblear. Ha jugado en Sporting Lisboa, Benfica y
+                                Arabia Saudí. Velocidad y centros precisos son su marca registrada.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carlos Zambrano -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">4</div>
+                            <div class="nombre">C. Zambrano</div>
+                            <div class="posicion">Defensa</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-zambrano">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-zambrano">
+                            <p class="texto-bio">
+                                Nacido el 10 de julio de 1989 en El Callao. Defensa central más
+                                experimentado de la selección. Conocido por su carácter fuerte y
+                                contundencia en el juego aéreo. Larga trayectoria en Europa y Sudamérica.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- HISTORIA -->
-        <section class="section">
-            <div class="sec-tag">Historia</div>
-            <h2 class="sec-title">Palmarés &amp; Datos</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon">🏟️</div>
-                    <div class="info-title">Cuartos en México 1970</div>
-                    <div class="info-text">La mejor actuación de Perú fue en el Mundial de México 1970, donde llegó a cuartos de final. Aquella generación, liderada por Teófilo Cubillas, es considerada la más brillante de la historia peruana.</div>
+
+        <!-- --- SECCIÓN: HISTORIA --- -->
+        <section class="seccion">
+            <span class="etiqueta-seccion">Historia</span>
+            <h2 class="titulo-seccion">Palmarés &amp; Datos</h2>
+
+            <div class="row g-3">
+
+                <div class="col-12 col-md-6">
+                    <div class="tarjeta-info">
+                        <div class="icono">🏟️</div>
+                        <div class="titulo">Cuartos de final en México 1970</div>
+                        <div class="descripcion">
+                            La mejor actuación de Perú fue en el Mundial de México 1970. Aquella
+                            generación, liderada por Teófilo Cubillas, es considerada la más
+                            brillante de la historia del fútbol peruano.
+                        </div>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">⭐</div>
-                    <div class="info-title">Teófilo Cubillas</div>
-                    <div class="info-text">Considerado el mejor jugador peruano de la historia, Cubillas brilló en los Mundiales de 1970 y 1978. Fue elegido entre los mejores jugadores del siglo XX por la IFFHS.</div>
+
+                <div class="col-12 col-md-6">
+                    <div class="tarjeta-info">
+                        <div class="icono">⭐</div>
+                        <div class="titulo">Teófilo Cubillas</div>
+                        <div class="descripcion">
+                            Considerado el mejor jugador peruano de la historia. Brilló en los
+                            Mundiales de 1970 y 1978 y fue elegido entre los mejores jugadores
+                            del siglo XX por la IFFHS.
+                        </div>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🔴⬜</div>
-                    <div class="info-title">La Blanquirroja</div>
-                    <div class="info-text">La camiseta de Perú, con su característica franja roja vertical sobre fondo blanco, es una de las más reconocidas de Sudamérica. Representa la sangre y la pureza de la nación peruana.</div>
+
+                <div class="col-12 col-md-6">
+                    <div class="tarjeta-info">
+                        <div class="icono">🔴⬜</div>
+                        <div class="titulo">La Blanquirroja</div>
+                        <div class="descripcion">
+                            La característica franja roja vertical sobre fondo blanco es una de las
+                            camisetas más reconocidas de Sudamérica. Representa la sangre y la
+                            pureza de la nación peruana.
+                        </div>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">📈</div>
-                    <div class="info-title">Regreso al Mundial</div>
-                    <div class="info-text">Tras 36 años de ausencia, Perú volvió a un Mundial en Rusia 2018 bajo la dirección de Ricardo Gareca, generando una euforia histórica en todo el país.</div>
+
+                <div class="col-12 col-md-6">
+                    <div class="tarjeta-info">
+                        <div class="icono">📈</div>
+                        <div class="titulo">Regreso al Mundial en 2018</div>
+                        <div class="descripcion">
+                            Tras 36 años de ausencia, Perú volvió a un Mundial en Rusia 2018
+                            bajo Ricardo Gareca, generando una euforia histórica en todo el
+                            país andino.
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
     </main>
 
-    <!-- BACK -->
-    <div class="back-bar">
+
+    <!-- ==========================================
+         BARRA INFERIOR — Links de navegación
+         ========================================== -->
+    <div class="barra-inferior">
         <a href="Ecuador.html"><i class="bi bi-arrow-left me-1"></i>Ecuador</a>
         <a href="grupoA.html"><i class="bi bi-grid me-1"></i>Grupo A</a>
         <a href="../../index.html"><i class="bi bi-house-fill me-1"></i>Inicio</a>
         <a href="Kenia.html">Kenia <i class="bi bi-arrow-right ms-1"></i></a>
     </div>
 
+    <!-- Bootstrap JS: necesario para el collapse (mostrar/ocultar biografías) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="jugadores.js"></script>
+
 </body>
 </html>

@@ -4,107 +4,344 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecuador — Grupo A | Mundial 2026</title>
+
+    <!-- Bootstrap: librería de estilos y componentes listos para usar -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons: iconos de Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Nuestros estilos compartidos entre todos los equipos -->
     <link href="equipos.css" rel="stylesheet">
+
+    <!-- Colores específicos de Ecuador (amarillo, azul, rojo) -->
     <style>
-        .equipo-hero { background: linear-gradient(135deg, #FFD100 0%, #003DA5 50%, #EF3340 100%); }
-        .conf-badge  { background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.4); color: #fff; }
-        .equipo-hero h1 { color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.5); }
+        .hero-equipo { background: linear-gradient(135deg, #FFD100, #003DA5, #EF3340); }
+        .hero-equipo h1             { color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .hero-equipo .subtitulo     { color: rgba(255,255,255,0.85); }
+        .hero-equipo .estadisticas .numero  { color: #FFD100; }
+        .hero-equipo .estadisticas .etiqueta { color: rgba(255,255,255,0.7); }
     </style>
 </head>
 <body>
 
-    <!-- NAVEGACIÓN ENTRE EQUIPOS -->
-    <nav class="team-nav">
-        <div class="team-nav-inner">
-            <a href="grupoA.html" class="team-nav-brand">⚽ Grupo A</a>
-            <div class="team-nav-links">
-                <a href="Argentina.html" class="team-btn">🇦🇷 Argentina</a>
-                <a href="Ecuador.html"   class="team-btn current">🇪🇨 Ecuador</a>
-                <a href="Peru.html"      class="team-btn">🇵🇪 Perú</a>
-                <a href="Kenia.html"     class="team-btn">🇰🇪 Kenia</a>
-            </div>
-        </div>
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN ENTRE EQUIPOS
+         ========================================== -->
+    <nav class="barra-nav">
+        <a href="grupoA.html" class="marca">⚽ Grupo A</a>
+        <a href="Argentina.html" class="btn-equipo">🇦🇷 Argentina</a>
+        <a href="Ecuador.html"   class="btn-equipo activo">🇪🇨 Ecuador</a>
+        <a href="Peru.html"      class="btn-equipo">🇵🇪 Perú</a>
+        <a href="Kenia.html"     class="btn-equipo">🇰🇪 Kenia</a>
     </nav>
 
-    <!-- HERO -->
-    <section class="equipo-hero">
-        <div class="overlay"></div>
-        <div class="hero-inner">
-            <div class="flag-big">🇪🇨</div>
+    <!-- ==========================================
+         HERO — Encabezado con bandera y estadísticas
+         ========================================== -->
+    <section class="hero-equipo">
+        <div class="contenido">
+
+            <div class="bandera">
+                <img src="../img/ecuador.webp" alt="Bandera de Ecuador">
+            </div>
+
             <div>
-                <div class="conf-badge">CONMEBOL · FIFA #42</div>
+                <p class="subtitulo">CONMEBOL · FIFA #42</p>
                 <h1>Ecuador</h1>
-                <p style="color:rgba(255,255,255,.85);font-weight:600;margin-bottom:.8rem">La Tri — Orgullo Sudamericano</p>
-                <div class="hero-stats">
-                    <div class="hero-stat"><span class="val">4</span><span class="lbl">Mundiales</span></div>
-                    <div class="hero-stat"><span class="val">#42</span><span class="lbl">Ranking FIFA</span></div>
-                    <div class="hero-stat"><span class="val">2002</span><span class="lbl">Debut mundial</span></div>
-                    <div class="hero-stat"><span class="val">QF</span><span class="lbl">Mejor resultado</span></div>
+                <p class="subtitulo">La Tri — Orgullo Sudamericano</p>
+
+                <div class="estadisticas">
+                    <div>
+                        <span class="numero">4</span>
+                        <span class="etiqueta">Mundiales</span>
+                    </div>
+                    <div>
+                        <span class="numero">#42</span>
+                        <span class="etiqueta">Ranking FIFA</span>
+                    </div>
+                    <div>
+                        <span class="numero">2002</span>
+                        <span class="etiqueta">Debut mundial</span>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- CONTENIDO -->
-    <main class="container">
 
-        <!-- PLANTEL -->
-        <section class="section">
-            <div class="sec-tag">Plantel</div>
-            <h2 class="sec-title">Jugadores Destacados</h2>
-            <div class="players-grid">
-                <div class="player-card" data-player="Moises Caicedo"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Moises Caicedo"><span class="player-num-badge">10</span></div><div class="player-name">Moisés Caicedo</div><div class="player-pos">Mediocampista</div></div>
-                <div class="player-card" data-player="Pervis Estupinian"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Pervis Estupinian"><span class="player-num-badge">7</span></div><div class="player-name">Pervis Estupiñán</div><div class="player-pos">Lateral Izq.</div></div>
-                <div class="player-card" data-player="Enner Valencia"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Enner Valencia"><span class="player-num-badge">9</span></div><div class="player-name">Enner Valencia</div><div class="player-pos">Delantero</div></div>
-                <div class="player-card" data-player="Gonzalo Plata"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Gonzalo Plata"><span class="player-num-badge">11</span></div><div class="player-name">Gonzalo Plata</div><div class="player-pos">Extremo</div></div>
-                <div class="player-card" data-player="Hernan Galindez"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Hernan Galindez"><span class="player-num-badge">1</span></div><div class="player-name">Hernán Galíndez</div><div class="player-pos">Portero</div></div>
-                <div class="player-card" data-player="Carlos Gruezo"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Carlos Gruezo"><span class="player-num-badge">5</span></div><div class="player-name">Carlos Gruezo</div><div class="player-pos">Mediocampista</div></div>
-                <div class="player-card" data-player="Piero Hincapie"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Piero Hincapie"><span class="player-num-badge">4</span></div><div class="player-name">Piero Hincapié</div><div class="player-pos">Defensa</div></div>
-                <div class="player-card" data-player="Angel Mena"><div class="player-photo-wrap"><img class="player-photo loading" src="" alt="Angel Mena"><span class="player-num-badge">8</span></div><div class="player-name">Ángel Mena</div><div class="player-pos">Extremo</div></div>
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+         ========================================== -->
+    <main class="contenedor">
+
+        <!-- --- SECCIÓN: JUGADORES --- -->
+        <section class="seccion">
+            <span class="etiqueta-seccion">Plantel</span>
+            <h2 class="titulo-seccion">Jugadores Destacados</h2>
+            <p class="text-secondary mb-4" style="font-size: .85rem;">
+                <i class="bi bi-info-circle me-1"></i>
+                Haz clic en "Ver bio" para leer la biografía de cada jugador.
+            </p>
+
+            <div class="row g-3">
+
+                <!-- Moisés Caicedo -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">10</div>
+                            <div class="nombre">Moisés Caicedo</div>
+                            <div class="posicion">Mediocampista</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-caicedo">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-caicedo">
+                            <p class="texto-bio">
+                                Nacido el 2 de noviembre de 2001 en Santo Domingo. Es el mediocampista
+                                más caro de la historia al fichar por el Chelsea por más de 115 millones
+                                de euros. Con apenas 22 años ya es figura mundial. Gran figura de La Tri.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pervis Estupiñán -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">7</div>
+                            <div class="nombre">P. Estupiñán</div>
+                            <div class="posicion">Lateral Izq.</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-estupinjan">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-estupinjan">
+                            <p class="texto-bio">
+                                Nacido el 21 de enero de 1998 en Esmeraldas. Uno de los mejores
+                                laterales izquierdos del mundo. Su velocidad y proyección ofensiva
+                                lo convirtieron en figura del Brighton de la Premier League inglesa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enner Valencia -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">9</div>
+                            <div class="nombre">Enner Valencia</div>
+                            <div class="posicion">Delantero</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-valencia">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-valencia">
+                            <p class="texto-bio">
+                                Nacido el 4 de noviembre de 1989 en Lago Agrio. Máximo goleador
+                                histórico de Ecuador. Marcó los 3 goles de La Tri en Brasil 2014.
+                                Ha jugado en West Ham, Everton y Fenerbahçe, entre otros clubes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gonzalo Plata -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">11</div>
+                            <div class="nombre">Gonzalo Plata</div>
+                            <div class="posicion">Extremo</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-plata">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-plata">
+                            <p class="texto-bio">
+                                Nacido el 1 de noviembre de 2000 en Guayaquil. Extremo desequilibrante
+                                con gran velocidad y habilidad. Jugó en el Sporting de Lisboa y en el
+                                Valladolid de España. Uno de los jugadores más creativos de La Tri.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hernán Galíndez -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">1</div>
+                            <div class="nombre">H. Galíndez</div>
+                            <div class="posicion">Portero</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-galindez">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-galindez">
+                            <p class="texto-bio">
+                                Nacido el 30 de marzo de 1987 en Buenos Aires, eligió representar a
+                                Ecuador por sus raíces familiares. Portero titular de La Tri, conocido
+                                por sus reflejos y liderazgo dentro del área.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carlos Gruezo -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">5</div>
+                            <div class="nombre">Carlos Gruezo</div>
+                            <div class="posicion">Mediocampista</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-gruezo">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-gruezo">
+                            <p class="texto-bio">
+                                Nacido el 19 de abril de 1995 en Santo Domingo. Mediocampista defensivo
+                                con gran energía y despliegue físico. Desarrolló su carrera en Alemania,
+                                jugando en el Stuttgart y el Augsburg de la Bundesliga.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Piero Hincapié -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">4</div>
+                            <div class="nombre">Piero Hincapié</div>
+                            <div class="posicion">Defensa</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-hincapie">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-hincapie">
+                            <p class="texto-bio">
+                                Nacido el 9 de enero de 2002 en Esmeraldas. Con solo 21 años es titular
+                                en el Bayer Leverkusen, que ganó la Bundesliga 2023-24 de forma invicta.
+                                Su serenidad y velocidad lo hacen excepcional para su edad.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ángel Mena -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tarjeta-jugador">
+                        <div class="encabezado">
+                            <div class="numero-camiseta">8</div>
+                            <div class="nombre">Ángel Mena</div>
+                            <div class="posicion">Extremo</div>
+                            <button class="btn btn-outline-warning btn-sm btn-bio"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#bio-mena">
+                                Ver bio
+                            </button>
+                        </div>
+                        <div class="collapse" id="bio-mena">
+                            <p class="texto-bio">
+                                Nacido el 21 de enero de 1988 en Lago Agrio. Extremo veterano con gran
+                                experiencia internacional. Ha jugado en varios clubes de México, incluido
+                                el León. Referente del equipo por su liderazgo y profesionalismo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- HISTORIA -->
-        <section class="section">
-            <div class="sec-tag">Historia</div>
-            <h2 class="sec-title">Palmarés &amp; Datos</h2>
-            <div class="info-grid">
-                <div class="info-card">
-                    <div class="info-icon">⚽</div>
-                    <div class="info-title">Debut mundialista en 2002</div>
-                    <div class="info-text">Ecuador debutó en los Mundiales en Corea-Japón 2002. Su primera aparición fue histórica para el fútbol ecuatoriano, marcando el inicio de una era dorada.</div>
+
+        <!-- --- SECCIÓN: HISTORIA --- -->
+        <section class="seccion">
+            <span class="etiqueta-seccion">Historia</span>
+            <h2 class="titulo-seccion">Palmarés &amp; Datos</h2>
+
+            <div class="row g-3">
+
+                <div class="col-12 col-md-6">
+                    <div class="tarjeta-info">
+                        <div class="icono">⚽</div>
+                        <div class="titulo">Debut mundialista en 2002</div>
+                        <div class="descripcion">
+                            Ecuador debutó en los Mundiales en Corea-Japón 2002, marcando el inicio
+                            de una era dorada para el fútbol ecuatoriano a nivel internacional.
+                        </div>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🏅</div>
-                    <div class="info-title">Cuartos de final en 2006</div>
-                    <div class="info-text">En Alemania 2006, Ecuador alcanzó los cuartos de final por primera y única vez. Dirigidos por Luis Fernando Suárez, eliminaron a Polonia y Costa Rica en la fase de grupos.</div>
+
+                <div class="col-12 col-md-6">
+                    <div class="tarjeta-info">
+                        <div class="icono">🏅</div>
+                        <div class="titulo">Cuartos de final en 2006</div>
+                        <div class="descripcion">
+                            En Alemania 2006, Ecuador alcanzó los cuartos de final por primera vez,
+                            eliminando a Polonia y Costa Rica bajo la dirección de Luis Fernando Suárez.
+                        </div>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🌟</div>
-                    <div class="info-title">La joya: Moisés Caicedo</div>
-                    <div class="info-text">Caicedo se convirtió en el mediocampista más caro del mundo al fichaje por el Chelsea. Considerado el mejor jugador ecuatoriano de la historia reciente con solo 22 años.</div>
+
+                <div class="col-12 col-md-6">
+                    <div class="tarjeta-info">
+                        <div class="icono">🌟</div>
+                        <div class="titulo">La joya: Moisés Caicedo</div>
+                        <div class="descripcion">
+                            Caicedo se convirtió en el mediocampista más caro del mundo al fichar por el
+                            Chelsea. Es considerado el mejor jugador ecuatoriano de la historia reciente.
+                        </div>
+                    </div>
                 </div>
-                <div class="info-card">
-                    <div class="info-icon">🔴🔵🟡</div>
-                    <div class="info-title">Colores nacionales</div>
-                    <div class="info-text">Los colores amarillo, azul y rojo de La Tri representan los colores de la bandera ecuatoriana. El amarillo simboliza la riqueza del suelo, el azul el cielo y mar, el rojo la sangre de los héroes.</div>
+
+                <div class="col-12 col-md-6">
+                    <div class="tarjeta-info">
+                        <div class="icono">🔴🔵🟡</div>
+                        <div class="titulo">Colores nacionales</div>
+                        <div class="descripcion">
+                            El amarillo simboliza la riqueza del suelo, el azul el cielo y el mar,
+                            el rojo la sangre de los héroes que lucharon por la independencia.
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
 
     </main>
 
-    <!-- BACK -->
-    <div class="back-bar">
+
+    <!-- ==========================================
+         BARRA INFERIOR — Links de navegación
+         ========================================== -->
+    <div class="barra-inferior">
         <a href="Argentina.html"><i class="bi bi-arrow-left me-1"></i>Argentina</a>
         <a href="grupoA.html"><i class="bi bi-grid me-1"></i>Grupo A</a>
         <a href="../../index.html"><i class="bi bi-house-fill me-1"></i>Inicio</a>
         <a href="Peru.html">Perú <i class="bi bi-arrow-right ms-1"></i></a>
     </div>
 
+    <!-- Bootstrap JS: necesario para el collapse (mostrar/ocultar biografías) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="jugadores.js"></script>
+
 </body>
 </html>
