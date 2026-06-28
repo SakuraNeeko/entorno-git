@@ -1,9 +1,9 @@
 const DATA = {
     teams: [
-        { name: 'Argentina',  flag: '🇦🇷', conf: 'CONMEBOL', mundiales: 18, ranking: 1,   best: 'Campeón (1978, 1986, 2022)' },
-        { name: 'Ecuador',    flag: '🇪🇨', conf: 'CONMEBOL', mundiales: 4,  ranking: 42,  best: 'Cuartos (2006)' },
-        { name: 'Perú',       flag: '🇵🇪', conf: 'CONMEBOL', mundiales: 9,  ranking: 24,  best: 'Cuartos (1970)' },
-        { name: 'Kenia',      flag: '🇰🇪', conf: 'CAF',      mundiales: 1,  ranking: 103, best: 'Debut (2026)' }
+        { name: 'Argentina', flag: '🇦🇷', conf: 'CONMEBOL', mundiales: 18, ranking: 1,   best: 'Campeón (1978, 1986, 2022)', url: 'Argentina.html' },
+        { name: 'Ecuador',   flag: '🇪🇨', conf: 'CONMEBOL', mundiales: 4,  ranking: 42,  best: 'Cuartos (2006)',             url: 'Ecuador.html'   },
+        { name: 'Perú',      flag: '🇵🇪', conf: 'CONMEBOL', mundiales: 9,  ranking: 24,  best: 'Cuartos (1970)',             url: 'Peru.html'      },
+        { name: 'Kenia',     flag: '🇰🇪', conf: 'CAF',      mundiales: 1,  ranking: 103, best: 'Debut (2026)',              url: 'Kenia.html'     }
     ],
     standings: [
         { pos: 1, team: '🇦🇷 Argentina', pj:3, g:3, e:0, p:0, gf:8, gc:2, pts:9 },
@@ -54,26 +54,29 @@ function renderTeams() {
     const grid = document.getElementById('teams-grid');
     grid.innerHTML = DATA.teams.map(t => `
         <div class="col-12 col-sm-6 col-lg-3">
-            <div class="team-card">
-                <div class="team-flag mb-3">${t.flag}</div>
-                <div class="team-name mb-1">${t.name}</div>
-                <div class="team-conf mb-3">${t.conf}</div>
-                <div class="row g-2 mb-3">
-                    <div class="col-6">
-                        <div class="team-stat-box">
-                            <div class="sv">${t.mundiales}</div>
-                            <div class="sl">Mundiales</div>
+            <a href="${t.url}" class="text-decoration-none d-block h-100">
+                <div class="team-card h-100">
+                    <div class="team-flag mb-3">${t.flag}</div>
+                    <div class="team-name mb-1">${t.name}</div>
+                    <div class="team-conf mb-3">${t.conf}</div>
+                    <div class="row g-2 mb-3">
+                        <div class="col-6">
+                            <div class="team-stat-box">
+                                <div class="sv">${t.mundiales}</div>
+                                <div class="sl">Mundiales</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="team-stat-box">
+                                <div class="sv">#${t.ranking}</div>
+                                <div class="sl">FIFA</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="team-stat-box">
-                            <div class="sv">#${t.ranking}</div>
-                            <div class="sl">FIFA</div>
-                        </div>
-                    </div>
+                    <div class="team-best"><i class="bi bi-trophy me-1"></i>${t.best}</div>
+                    <div class="mt-3" style="font-size:.78rem;color:var(--accent)">Ver selección →</div>
                 </div>
-                <div class="team-best"><i class="bi bi-trophy me-1"></i>${t.best}</div>
-            </div>
+            </a>
         </div>
     `).join('');
 }
