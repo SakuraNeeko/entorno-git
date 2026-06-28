@@ -211,6 +211,33 @@
             color: #fff;
             margin-bottom: 2rem;
         }
+
+        /* ---------- Adaptación a pantallas pequeñas ---------- */
+        @media (max-width: 600px) {
+
+            /* El encabezado del miembro apila avatar y datos en columna */
+            .member-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 1.2rem 1rem;
+            }
+
+            /* Los botones de la navbar se hacen más pequeños */
+            .navbar .d-flex {
+                gap: 0.4rem;
+            }
+
+            /* El cuerpo del miembro con menos padding lateral */
+            .member-body {
+                padding: 1rem;
+            }
+
+            /* El contenedor principal con menos espacio lateral */
+            .container-main {
+                padding: 2rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>

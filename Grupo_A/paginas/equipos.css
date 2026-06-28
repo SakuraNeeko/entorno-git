@@ -276,16 +276,42 @@ body {
     text-decoration: underline;
 }
 
-/* ---------- Adaptación a pantallas pequeñas ---------- */
+/* ---------- Adaptación a pantallas pequeñas (celulares) ---------- */
 @media (max-width: 600px) {
+
+    /* La barra de navegación apila los botones en varias filas */
+    .barra-nav {
+        gap: 0.5rem;
+        padding: 0.6rem 1rem;
+    }
+
+    /* El hero pasa de horizontal a vertical */
     .hero-equipo .contenido {
         flex-direction: column;
         text-align: center;
     }
+
+    /* La bandera emoji se hace más pequeña */
     .hero-equipo .bandera {
         font-size: 4.5rem;
     }
+
+    /* La imagen de bandera también se reduce en celular */
+    .hero-equipo .bandera img {
+        width: 120px;
+        height: 75px;
+    }
+
+    /* Las estadísticas se centran */
     .hero-equipo .estadisticas {
         justify-content: center;
+    }
+
+    /* La barra inferior apila los links en columna */
+    .barra-inferior {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: center;
     }
 }
