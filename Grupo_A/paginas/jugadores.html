@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum de Cromos — Mundial 2026</title>
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Estilos propios del álbum (Estudiante D) -->
+    <link href="jugadores.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN
+         ========================================== -->
+    <nav class="barra-nav">
+        <a href="grupoA.html" class="marca">⚽ Grupo A</a>
+        <a href="Argentina.html">🇦🇷 Argentina</a>
+        <a href="Ecuador.html">🇪🇨 Ecuador</a>
+        <a href="Peru.html">🇵🇪 Perú</a>
+        <a href="Kenia.html">🇰🇪 Kenia</a>
+    </nav>
+
+
+    <!-- ==========================================
+         CABECERA DEL ÁLBUM
+         ========================================== -->
+    <header class="cabecera-album">
+
+        <h1>🃏 Álbum Virtual de Cromos</h1>
+        <p>FIFA World Cup 2026 — Colección de jugadores mundialistas</p>
+
+        <!-- Contador de cromos desbloqueados (Estudiante F) -->
+        <div class="contador-wrap">
+            <i class="bi bi-unlock-fill me-1"></i>
+            <span id="contador-desbloqueados">0 / 0 cromos desbloqueados (0%)</span>
+        </div>
+
+        <!-- Total de goles de los jugadores del Grupo C y D (Estudiante C) -->
+        <div class="info-goles">
+            <i class="bi bi-bar-chart-fill me-1"></i>
+            Goles acumulados (Grupos C y D):
+            <strong id="goles-grupo-cd">calculando...</strong>
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         BARRA DE FILTROS (Estudiante E)
+         ========================================== -->
+    <div class="barra-filtros">
+
+        <!-- Campo de búsqueda por nombre -->
+        <input
+            type="text"
+            id="filtro-nombre"
+            placeholder="🔍 Buscar jugador por nombre...">
+
+        <!-- Menú desplegable para filtrar por país -->
+        <select id="filtro-pais">
+            <option value="">🌍 Todos los países</option>
+            <!-- Las opciones se generan automáticamente desde JavaScript -->
+        </select>
+
+    </div>
+
+
+    <!-- ==========================================
+         ÁLBUM DE CROMOS
+         Las tarjetas se generan aquí desde JavaScript
+         ========================================== -->
+    <main id="album-contenedor" class="contenedor-album">
+        <!-- jugadores.js inyecta aquí las tarjetas al cargar la página -->
+    </main>
+
+
+    <!-- ==========================================
+         BARRA INFERIOR
+         ========================================== -->
+    <div class="barra-inferior">
+        <a href="grupoA.html"><i class="bi bi-grid me-1"></i>Grupo A</a>
+        <a href="../../index.html"><i class="bi bi-house-fill me-1"></i>Inicio</a>
+    </div>
+
+
+    <!-- Toda la lógica del álbum está en jugadores.js -->
+    <script src="jugadores.js"></script>
+
+</body>
+</html>

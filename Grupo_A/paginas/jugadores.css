@@ -1,0 +1,375 @@
+/* ============================================================
+   jugadores.css — Estilos del Álbum Virtual de Cromos
+   Estudiante D: diseño de tarjetas, animaciones y efectos
+   ============================================================ */
+
+/* Fuente del proyecto */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+/* ---------- Estilos generales ---------- */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #080c08;
+    color: #ddeedd;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- Barra de navegación ---------- */
+.barra-nav {
+    background-color: rgba(8, 12, 8, 0.95);
+    border-bottom: 1px solid #1e271e;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0.6rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.barra-nav .marca {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #FFD700;
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.barra-nav a {
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #ddeedd;
+    background-color: #111811;
+    border: 1px solid #1e271e;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.barra-nav a:hover {
+    border-color: #00e676;
+    color: #00e676;
+}
+
+/* ---------- Cabecera del álbum ---------- */
+.cabecera-album {
+    background: linear-gradient(145deg, #001a00, #004200, #001a00);
+    padding: 3rem 1.5rem 2rem;
+    text-align: center;
+}
+
+.cabecera-album h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    color: #FFD700;
+    margin-bottom: 0.4rem;
+    letter-spacing: -1px;
+}
+
+.cabecera-album p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Contador de cromos desbloqueados */
+.contador-wrap {
+    display: inline-block;
+    background-color: rgba(0, 100, 0, 0.3);
+    border: 1px solid rgba(0, 230, 118, 0.3);
+    color: #00e676;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-top: 0.8rem;
+}
+
+/* Dato de goles acumulados del Grupo C/D */
+.info-goles {
+    background-color: #111811;
+    border: 1px solid #1e271e;
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem auto 0;
+    max-width: 400px;
+    font-size: 0.85rem;
+    color: #6b8a6b;
+}
+
+.info-goles strong {
+    color: #FFD700;
+}
+
+/* ---------- Barra de filtros ---------- */
+.barra-filtros {
+    background-color: #0e130e;
+    border-bottom: 1px solid #1e271e;
+    padding: 1rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Input de búsqueda por nombre */
+.barra-filtros input,
+.barra-filtros select {
+    background-color: #111811;
+    border: 1px solid #1e271e;
+    border-radius: 10px;
+    color: #ddeedd;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+    min-width: 180px;
+}
+
+.barra-filtros input:focus,
+.barra-filtros select:focus {
+    border-color: #00e676;
+}
+
+.barra-filtros select option {
+    background-color: #111811;
+}
+
+/* ---------- Contenedor del álbum ---------- */
+.contenedor-album {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Mensaje cuando no hay resultados */
+.sin-resultados {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #6b8a6b;
+    font-size: 0.9rem;
+    padding: 3rem;
+}
+
+/* ---------- Estudiante D: Tarjeta de cromo ---------- */
+
+/* Animación de entrada — aparece desde abajo al cargar */
+@keyframes entrar {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de destello al desbloquear */
+@keyframes destello {
+    0%   { box-shadow: 0 0 0px #FFD700; }
+    50%  { box-shadow: 0 0 30px #FFD700, 0 0 60px #FFD700; }
+    100% { box-shadow: 0 0 0px #FFD700; }
+}
+
+/* Tarjeta base */
+.card-cromo {
+    border-radius: 18px;
+    overflow: hidden;
+    animation: entrar 0.4s ease both; /* animación de entrada */
+    cursor: pointer;
+    position: relative;
+}
+
+/* Interior de la tarjeta — recibe el color dinámico del jugador */
+.cromo-inner {
+    border-radius: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    padding: 1.2rem 1rem;
+    text-align: center;
+    height: 100%;
+    position: relative;
+    /* Efecto hover — Estudiante D */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-cromo:hover .cromo-inner {
+    transform: translateY(-5px) scale(1.02); /* sube y crece un poco */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Bandera (emoji) */
+.cromo-bandera {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Foto del jugador */
+.cromo-foto {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    object-fit: cover;
+    margin-bottom: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Información del jugador */
+.cromo-info {
+    color: #ffffff;
+}
+
+.cromo-nombre {
+    font-size: 0.9rem;
+    font-weight: 900;
+    margin-bottom: 0.15rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.cromo-pais {
+    font-size: 0.72rem;
+    font-weight: 700;
+    opacity: 0.85;
+    margin-bottom: 0.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cromo-posicion {
+    font-size: 0.68rem;
+    opacity: 0.7;
+    margin-bottom: 0.6rem;
+}
+
+.cromo-stats {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.7rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.cromo-curiosidad {
+    font-size: 0.68rem;
+    opacity: 0.8;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* ---------- Estudiante F: Estado BLOQUEADO ---------- */
+/* El cromo empieza en blanco y negro con desenfoque */
+.card-cromo.bloqueado .cromo-inner {
+    filter: grayscale(100%) blur(2px);
+}
+
+/* Capa oscura con el botón de desbloqueo */
+.bloqueo-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.bloqueo-icono {
+    font-size: 2rem;
+}
+
+/* Botón de desbloquear */
+.btn-desbloquear {
+    background-color: #FFD700;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-desbloquear:hover {
+    background-color: #fff176;
+    transform: scale(1.05);
+}
+
+/* ---------- Estado DESBLOQUEADO ---------- */
+.card-cromo.desbloqueado .cromo-inner {
+    filter: none; /* quita el grayscale y el blur */
+}
+
+/* Cuando se desbloquea, oculta la capa oscura */
+.card-cromo.desbloqueado .bloqueo-overlay {
+    display: none;
+}
+
+/* Animación de destello al desbloquear */
+.card-cromo.destello .cromo-inner {
+    animation: destello 0.6s ease;
+}
+
+/* ---------- Barra inferior ---------- */
+.barra-inferior {
+    background-color: #0e130e;
+    border-top: 1px solid #1e271e;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.barra-inferior a {
+    color: #00e676;
+    text-decoration: none;
+    font-size: 0.88rem;
+    margin: 0 0.8rem;
+}
+
+.barra-inferior a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Adaptación a pantallas pequeñas ---------- */
+@media (max-width: 600px) {
+
+    /* Menos columnas en móvil */
+    .contenedor-album {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
+
+    /* La barra de filtros apila los campos en columna */
+    .barra-filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .barra-filtros input,
+    .barra-filtros select {
+        min-width: unset;
+        width: 100%;
+    }
+
+    /* La barra inferior apila los links */
+    .barra-inferior {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: center;
+    }
+}
