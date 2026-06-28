@@ -1,288 +1,291 @@
+/* ============================================================
+   equipos.css — Estilos compartidos para todas las páginas
+   de equipo del Grupo A (Argentina, Ecuador, Perú, Kenia)
+   ============================================================ */
+
+/* Fuente principal del proyecto */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
 
-:root {
-    --bg:      #080c08;
-    --bg2:     #0e130e;
-    --card:    #111811;
-    --border:  #1e271e;
-    --text:    #ddeedd;
-    --muted:   #6b8a6b;
-    --gold:    #FFD700;
-    --accent:  #00e676;
-    --green:   #006400;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
+/* ---------- Estilos generales del cuerpo ---------- */
 body {
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: #080c08;  /* fondo muy oscuro */
+    color: #ddeedd;             /* texto verde claro */
+    margin: 0;
+    padding: 0;
 }
 
-/* ── TEAM NAV ── */
-.team-nav {
-    background: rgba(8,12,8,.95);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
+/* ---------- Barra de navegación superior ---------- */
+/* La barra se queda fija al hacer scroll (sticky) */
+.barra-nav {
+    background-color: rgba(8, 12, 8, 0.95);
+    border-bottom: 1px solid #1e271e;
     position: sticky;
     top: 0;
-    z-index: 200;
-}
-
-.team-nav-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: .6rem 1.5rem;
+    z-index: 100;
+    padding: 0.6rem 1.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
-.team-nav-brand {
+/* Logo/marca en la barra */
+.barra-nav .marca {
     font-size: 1rem;
     font-weight: 900;
-    color: var(--gold);
+    color: #FFD700;        /* dorado */
     text-decoration: none;
-    white-space: nowrap;
+    margin-right: auto;
 }
 
-.team-nav-links {
-    display: flex;
-    gap: .4rem;
-    flex-wrap: wrap;
-    margin-left: auto;
-}
-
-.team-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: .4rem;
-    padding: .4rem 1rem;
+/* Botones de navegación entre equipos */
+.barra-nav .btn-equipo {
+    padding: 0.35rem 0.9rem;
     border-radius: 20px;
-    font-size: .82rem;
+    font-size: 0.82rem;
     font-weight: 600;
     text-decoration: none;
-    color: var(--text);
-    background: var(--card);
-    border: 1px solid var(--border);
-    transition: border-color .2s, background .2s, color .2s;
-    white-space: nowrap;
+    color: #ddeedd;
+    background-color: #111811;
+    border: 1px solid #1e271e;
+    transition: border-color 0.2s, color 0.2s;
 }
 
-.team-btn:hover   { border-color: var(--accent); color: var(--accent); }
-.team-btn.current { border-color: var(--gold); color: var(--gold); background: rgba(255,215,0,.08); }
+.barra-nav .btn-equipo:hover {
+    border-color: #00e676;
+    color: #00e676;
+}
 
-/* ── HERO ── */
-.equipo-hero {
-    position: relative;
-    min-height: 380px;
+/* Resalta el equipo actual */
+.barra-nav .btn-equipo.activo {
+    border-color: #FFD700;
+    color: #FFD700;
+    background-color: rgba(255, 215, 0, 0.08);
+}
+
+/* ---------- Sección hero (encabezado del equipo) ---------- */
+.hero-equipo {
+    padding: 4rem 1.5rem;
     display: flex;
     align-items: center;
-    overflow: hidden;
-    padding: 4rem 1.5rem;
-}
-
-.equipo-hero .overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,.45);
-}
-
-.equipo-hero .hero-inner {
+    min-height: 340px;
     position: relative;
-    z-index: 2;
+    overflow: hidden;
+}
+
+/* Contenido dentro del hero */
+.hero-equipo .contenido {
     max-width: 1100px;
     margin: 0 auto;
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
-.equipo-hero .flag-big { font-size: 7rem; line-height: 1; filter: drop-shadow(0 6px 20px rgba(0,0,0,.5)); }
+/* Bandera grande del equipo */
+.hero-equipo .bandera {
+    font-size: 6rem;
+    line-height: 1;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+    flex-shrink: 0;
+}
 
-.equipo-hero h1 {
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
+/* Si la bandera es una imagen en vez de emoji */
+.hero-equipo .bandera img {
+    width: 160px;
+    height: 100px;
+    object-fit: cover;   /* recorta sin deformar */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* Nombre del equipo */
+.hero-equipo h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 900;
-    color: #fff;
+    margin-bottom: 0.3rem;
     letter-spacing: -1px;
-    margin-bottom: .3rem;
 }
 
-.equipo-hero .conf-badge {
-    display: inline-block;
-    padding: .3rem 1rem;
-    border-radius: 20px;
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: .8rem;
+/* Subtítulo del equipo */
+.hero-equipo .subtitulo {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
 }
 
-.equipo-hero .hero-stats {
+/* Estadísticas rápidas en el hero */
+.hero-equipo .estadisticas {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
 }
 
-.hero-stat .val { font-size: 1.5rem; font-weight: 900; color: var(--gold); display: block; }
-.hero-stat .lbl { font-size: .7rem; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: 1px; }
+.hero-equipo .estadisticas .numero {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #FFD700;
+}
 
-/* ── CONTAINER ── */
-.container {
+.hero-equipo .estadisticas .etiqueta {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+
+/* ---------- Contenedor principal ---------- */
+.contenedor {
     max-width: 1100px;
     margin: 0 auto;
     padding: 3rem 1.5rem;
 }
 
-/* ── SECTION ── */
-.sec-tag {
+/* ---------- Etiqueta de sección (tag pequeño) ---------- */
+.etiqueta-seccion {
     display: inline-block;
-    background: rgba(0,100,0,.35);
-    color: var(--accent);
-    border: 1px solid rgba(0,230,118,.25);
-    font-size: .7rem;
+    background-color: rgba(0, 100, 0, 0.35);
+    color: #00e676;
+    border: 1px solid rgba(0, 230, 118, 0.25);
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: .25rem .9rem;
+    padding: 0.25rem 0.9rem;
     border-radius: 20px;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
-.sec-title {
+/* Título de cada sección */
+.titulo-seccion {
     font-size: clamp(1.3rem, 2.5vw, 1.8rem);
     font-weight: 900;
-    color: #fff;
+    color: #ffffff;
     margin-bottom: 1.5rem;
 }
 
-.section { margin-bottom: 3.5rem; }
-
-/* ── PLAYER CARDS ── */
-.players-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1rem;
+/* Separador entre secciones */
+.seccion {
+    margin-bottom: 3.5rem;
 }
 
-.player-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1.2rem 1rem 1rem;
+/* ---------- Tarjeta de jugador ---------- */
+.tarjeta-jugador {
+    background-color: #111811;
+    border: 1px solid #1e271e;
+    border-radius: 14px;
+    overflow: hidden;      /* oculta lo que sale de los bordes redondeados */
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.tarjeta-jugador:hover {
+    transform: translateY(-4px);
+    border-color: #006400;
+}
+
+/* Encabezado de la tarjeta con número y nombre */
+.tarjeta-jugador .encabezado {
+    padding: 1.2rem 1rem;
     text-align: center;
-    transition: transform .3s, border-color .3s, box-shadow .3s;
     position: relative;
-    overflow: hidden;
 }
 
-.player-card:hover {
-    transform: translateY(-6px);
-    border-color: var(--green);
-    box-shadow: 0 12px 30px rgba(0,100,0,.2);
-}
-
-/* foto */
-.player-photo-wrap {
-    position: relative;
-    width: 90px;
-    height: 90px;
-    margin: 0 auto .8rem;
-}
-
-.player-photo {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-    border: 2px solid var(--border);
-    display: block;
-    transition: border-color .3s;
-    background: var(--bg2);
-}
-
-.player-card:hover .player-photo { border-color: var(--accent); }
-
-.player-num-badge {
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    background: var(--gold);
-    color: #000;
-    font-size: .65rem;
+/* Número de camiseta */
+.tarjeta-jugador .numero-camiseta {
+    font-size: 2rem;
     font-weight: 900;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--card);
+    color: #FFD700;
+    line-height: 1;
+    margin-bottom: 0.3rem;
 }
 
-/* skeleton mientras carga */
-.player-photo.loading {
-    background: linear-gradient(90deg, var(--bg2) 25%, var(--border) 50%, var(--bg2) 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.4s infinite;
+/* Nombre del jugador */
+.tarjeta-jugador .nombre {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
 }
 
-@keyframes shimmer {
-    0%   { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+/* Posición del jugador */
+.tarjeta-jugador .posicion {
+    font-size: 0.7rem;
+    color: #6b8a6b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
 }
 
-.player-name { font-weight: 700; font-size: .88rem; color: #fff; margin-bottom: .2rem; }
-.player-pos  { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
-
-/* ── INFO CARDS ── */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
+/* Botón para mostrar/ocultar la biografía */
+.tarjeta-jugador .btn-bio {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.8rem;
+    border-radius: 20px;
 }
 
-.info-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--green);
+/* Texto de la biografía dentro del acordeón */
+.tarjeta-jugador .texto-bio {
+    font-size: 0.82rem;
+    color: #a0bfa0;
+    line-height: 1.7;
+    padding: 0 1rem 1rem;
+    border-top: 1px solid #1e271e;
+    padding-top: 0.8rem;
+}
+
+/* ---------- Tarjeta de información (estadios, historia) ---------- */
+.tarjeta-info {
+    background-color: #111811;
+    border: 1px solid #1e271e;
+    border-left: 4px solid #006400; /* línea verde a la izquierda */
     border-radius: 14px;
     padding: 1.4rem;
-    transition: border-left-color .3s;
+    height: 100%;
+    transition: border-left-color 0.3s;
 }
 
-.info-card:hover { border-left-color: var(--gold); }
+.tarjeta-info:hover {
+    border-left-color: #FFD700;
+}
 
-.info-icon  { font-size: 1.6rem; margin-bottom: .5rem; }
-.info-title { font-weight: 800; color: var(--gold); font-size: .92rem; margin-bottom: .3rem; }
-.info-text  { font-size: .83rem; color: var(--muted); line-height: 1.6; }
+.tarjeta-info .icono      { font-size: 1.6rem; margin-bottom: 0.5rem; }
+.tarjeta-info .titulo     { font-weight: 800; color: #FFD700; font-size: 0.92rem; margin-bottom: 0.3rem; }
+.tarjeta-info .descripcion { font-size: 0.83rem; color: #6b8a6b; line-height: 1.6; }
 
-/* ── BACK LINKS ── */
-.back-bar {
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
+/* ---------- Barra de navegación inferior (volver/siguiente) ---------- */
+.barra-inferior {
+    background-color: #0e130e;
+    border-top: 1px solid #1e271e;
     padding: 1.5rem;
     text-align: center;
 }
 
-.back-bar a {
-    color: var(--accent);
+.barra-inferior a {
+    color: #00e676;
     text-decoration: none;
-    font-size: .88rem;
-    margin: 0 .8rem;
+    font-size: 0.88rem;
+    margin: 0 0.8rem;
 }
 
-.back-bar a:hover { text-decoration: underline; }
+.barra-inferior a:hover {
+    text-decoration: underline;
+}
 
-/* ── RESPONSIVE ── */
+/* ---------- Adaptación a pantallas pequeñas ---------- */
 @media (max-width: 600px) {
-    .equipo-hero .hero-inner { flex-direction: column; text-align: center; gap: 1rem; }
-    .equipo-hero .flag-big   { font-size: 5rem; }
-    .equipo-hero .hero-stats { justify-content: center; }
-    .players-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    .hero-equipo .contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-equipo .bandera {
+        font-size: 4.5rem;
+    }
+    .hero-equipo .estadisticas {
+        justify-content: center;
+    }
 }
