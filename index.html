@@ -146,6 +146,22 @@
         ::-webkit-scrollbar { width:6px; }
         ::-webkit-scrollbar-track { background:var(--bg); }
         ::-webkit-scrollbar-thumb { background:var(--green); border-radius:3px; }
+
+        /* ---------- Adaptación a pantallas pequeñas ---------- */
+        @media (max-width: 600px) {
+
+            /* Ocultamos los círculos decorativos que se salen de la pantalla */
+            .hero-deco { display: none; }
+
+            /* El hero no necesita tanta altura en móvil */
+            .hero { min-height: auto; padding: 2rem 0; }
+
+            /* Las tarjetas de grupo con menos padding */
+            .grupo-card { padding: 1.2rem 0.8rem; }
+
+            /* El nombre del grupo un poco más pequeño */
+            .grupo-label { font-size: 0.95rem; }
+        }
     </style>
 </head>
 <body>
